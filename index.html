@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Masveri — Maldives Fisher Helper</title><meta name="theme-color" content="#06283d">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"></head><body>
+<header class="hero"><div class="waves"></div><h1>🎣 Masveri <span class="dv">މަސްވެރި</span></h1><p>A free pocket helper for Maldivian fishermen — weather at sea, moon, catch log, fish guide, safety and costs. Works offline after first visit.</p></header>
+<nav id="tabs"><button data-t="sea" class="on">🌊 Sea</button><button data-t="ask">💬 Ask</button><button data-t="log">📒 Log</button><button data-t="fish">🐟 Fish</button><button data-t="cost">⛽ Cost</button><button data-t="safe">🆘 Safety</button></nav>
+<main>
+<section id="sea" class="tab on"><h2>Sea today <span class="dv">ކަނޑު</span></h2>
+<label>Atoll / island <select id="atoll"></select></label>
+<div id="wx" class="grid"><p>Loading live forecast…</p></div><p class="note">Live data from the free Open-Meteo forecast &amp; marine models. Model estimates only — always check MMS (meteorology.gov.mv) warnings before going out.</p>
+<h3>Moon <span class="dv">ހަނދު</span></h3><div id="moon" class="card"></div></section>
+<section id="ask" class="tab"><h2>Ask the helper <span class="dv">ސުވާލު</span></h2><p class="note">This is a simple offline helper with fixed answers — not AI. It matches keywords in your question.</p>
+<div id="chat"></div><form id="askf"><input id="q" placeholder="e.g. what bait for skipjack?" autocomplete="off"><button>Ask</button></form><div id="chips"></div></section>
+<section id="log" class="tab"><h2>Catch log <span class="dv">ހިފި މަސް</span></h2><p class="note">Saved only on this phone (browser storage).</p>
+<form id="logf" class="grid2"><input id="lf" placeholder="Fish (e.g. Skipjack)" required><input id="lk" type="number" step="0.1" placeholder="kg" required><input id="lp" placeholder="Place / reef"><input id="ld" type="date"><button>Add catch</button></form>
+<div id="tot" class="card"></div><ul id="logl"></ul><button id="exp" class="ghost">Export CSV</button></section>
+<section id="fish" class="tab"><h2>Fish guide <span class="dv">މަސް</span></h2><div id="fishl" class="grid"></div></section>
+<section id="cost" class="tab"><h2>Trip cost (MVR) <span class="dv">ޚަރަދު</span></h2>
+<div class="grid2"><label>Fuel used (litres)<input id="c1" type="number" value="120"></label><label>Fuel price MVR/litre<input id="c2" type="number" step="0.01" value="16"></label><label>Ice &amp; bait MVR<input id="c3" type="number" value="500"></label><label>Food &amp; other MVR<input id="c4" type="number" value="300"></label><label>Expected catch kg<input id="c5" type="number" value="300"></label><label>Price per kg MVR<input id="c6" type="number" step="0.5" value="20"></label></div>
+<div id="cres" class="card big"></div><p class="note">Default prices are sample numbers only — enter today's real prices.</p></section>
+<section id="safe" class="tab"><h2>Safety <span class="dv">ރައްކާތެރިކަން</span></h2>
+<div class="grid em"><a href="tel:191">🚤 Coast Guard<b>191</b></a><a href="tel:119">👮 Police<b>119</b></a><a href="tel:102">🚑 Ambulance<b>102</b><small>NDMA lists 100</small></a><a href="tel:118">🚒 Fire &amp; Rescue<b>118</b></a><a href="tel:115">🌀 NDMA<b>115</b></a></div>
+<p class="note">Numbers from NDMA, Maldives Police and Dhiraagu directory (checked Oct 2026). Police also list 911.</p>
+<h3>Before you leave</h3><ul id="chk" class="chk"></ul><button id="rst" class="ghost">Reset checklist</button></section>
+</main>
+<footer>Design &amp; build by <a href="https://reseachrandomv.github.io/cv/">Fathimath Malaak Jaufar</a> · Not an official service · Weather by <a href="https://open-meteo.com">Open-Meteo</a></footer>
+<script src="app.js"></script></body></html>
